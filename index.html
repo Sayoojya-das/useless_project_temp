@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Ctrl+Yawn 💀 — The world's most useless AI yawn detector." />
+  <title>Ctrl+Yawn 💀 — The Useless Yawn Detector</title>
+</head>
+<body>
+  <header>
+    <h1>Ctrl+Yawn 💀</h1>
+    <p>The World's Most Useless AI Yawn Detector</p>
+    <p>🔒 Your camera stays on your device. No recording.</p>
+  </header>
 
+  <main>
+    <!-- Camera section -->
+    <section id="camera-section">
+      <video id="webcam" autoplay muted playsinline></video>
+      <canvas id="canvas"></canvas>
+      <div id="startScreen">
+        <h2>Ready to Get Exposed? 💀</h2>
+        <p>We'll use your camera to detect yawns in real time. No data leaves your device.</p>
+        <button id="startBtn">Start Yawn Detector 📸</button>
+      </div>
+    </section>
+
+    <!-- Stats section -->
+    <section id="stats-section">
+      <div id="counterNum">0</div>
+      <div id="levelBadge">Wide Awake 👀</div>
+    </section>
+
+    <!-- Controls -->
+    <section id="controls">
+      <button id="resetBtn">💀 Reset Yawns</button>
+      <button id="reportBtn">📊 Useless Report</button>
+    </section>
+  </main>
+
+  <script>
+    // TODO: wire up camera and detection
+    document.getElementById('startBtn').addEventListener('click', () => {
+      alert('Camera coming soon!');
+    });
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      document.getElementById('counterNum').textContent = '0';
+    });
+  </script>
+</body>
+</html>
