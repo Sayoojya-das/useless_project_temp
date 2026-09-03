@@ -3,49 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="description" content="Ctrl+Yawn 💀 — The world's most useless AI yawn detector." />
-  <title>Ctrl+Yawn 💀 — The Useless Yawn Detector</title>
+  <meta name="description" content="Ctrl+Yawn 💀 — Yawn Court. Every yawn is evidence. Every user is on trial." />
+  <meta name="theme-color" content="#100d0b" />
+  <title>Ctrl+Yawn 💀 — The Yawn Court</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Ctrl+Yawn 💀</h1>
-    <p>The World's Most Useless AI Yawn Detector</p>
-    <p>🔒 Your camera stays on your device. No recording.</p>
-  </header>
 
-  <main>
-    <!-- Camera section -->
-    <section id="camera-section">
-      <video id="webcam" autoplay muted playsinline></video>
-      <canvas id="canvas"></canvas>
-      <div id="startScreen">
-        <h2>Ready to Get Exposed? 💀</h2>
-        <p>We'll use your camera to detect yawns in real time. No data leaves your device.</p>
-        <button id="startBtn">Start Yawn Detector 📸</button>
+  <div id="app">
+
+    <!-- COURT HEADER -->
+    <header>
+      <div class="header-top">
+        <div class="dossier-tag">⚖️ YAWN COURT · DIVISION 404</div>
+        <button class="sound-toggle-btn" id="soundToggleBtn">🔊 SOUND ON</button>
       </div>
-    </section>
 
-    <!-- Stats section -->
-    <section id="stats-section">
-      <div id="counterNum">0</div>
-      <div id="levelBadge">Wide Awake 👀</div>
-    </section>
+      <div class="title-wrap">
+        <h1 class="court-logo-title">Ctrl+Yawn 💀</h1>
+        <div style="font-family: var(--font-court); font-size: 1.5rem; color: var(--gold-antique); letter-spacing: 2px;">
+          THE YAWN COURT
+        </div>
+        <div class="court-subtitle">«“All rise. Someone just yawned.”»</div>
+      </div>
+    </header>
 
-    <!-- Controls -->
-    <section id="controls">
-      <button id="resetBtn">💀 Reset Yawns</button>
-      <button id="reportBtn">📊 Useless Report</button>
-    </section>
-  </main>
+    <!-- MAIN COURTROOM GRID -->
+    <div class="court-grid">
 
-  <script>
-    // TODO: wire up camera and detection
-    document.getElementById('startBtn').addEventListener('click', () => {
-      alert('Camera coming soon!');
-    });
-    document.getElementById('resetBtn').addEventListener('click', () => {
-      document.getElementById('counterNum').textContent = '0';
-    });
-  </script>
+      <!-- LEFT: COURT EVIDENCE CAMERA PANEL -->
+      <div class="court-panel">
+        <div class="panel-header">
+          <div class="panel-title">📹 COURT EVIDENCE</div>
+          <span style="font-family: var(--font-legal); font-size: 0.75rem; color: var(--gold-antique);">
+            LIVE SUBJECT MONITORING
+          </span>
+        </div>
+
+        <div id="cameraContainer">
+          <video id="webcam" autoplay muted playsinline></video>
+          <canvas id="canvasOverlay"></canvas>
+
+          <div class="evidence-tag-corner">EVIDENCE CAMERA #01</div>
+          <div class="mar-readout" id="marReadout">MAR: 0.00</div>
+
+          <!-- OBJECTION & YAWN DETECTED POPUP OVERLAY -->
+          <div id="objectionOverlay">
+            <div class="objection-box">
+              <div class="objection-title">🚨 OBJECTION! 🚨</div>
+              <div style="font-family: var(--font-court); font-size: 1.4rem; color: var(--paper-cream); margin-top: 4px;">
+                YAWN DETECTED 💀
+              </div>
+              <div class="objection-sub" id="objectionQuote">“OBJECTION! THAT WAS CLEARLY A YAWN.”</div>
+            </div>
+          </div>
+
+          <!-- Start Screen Overlay -->
+          <div id="startScreen">
+            <div class="ink-stamp stamp-gold" style="margin-bottom: 12px;">CASE #001: PENDING</div>
+            <h2 style="font-family: var(--font-court); font-size: 1.5rem; color: var(--paper-cream);">
+              ARE YOU GUILTY OF SLEEPINESS? 💀
+            </h2>
+            <p style="font-family: var(--font-legal); font-size: 0.85rem; color: var(--text-muted); max-width: 320px; line-height: 1.4;">
+              Every yawn is evidence. Turn on your front camera to enter the trial.
+            </p>
+            <button class="btn-enter-court" id="startBtn">ENTER THE COURTROOM ⚖️</button>
+            <p style="font-size: 0.75rem; color: var(--gold-antique); margin-top: 6px;">
+              🔒 COURT EVIDENCE NEVER LEAVES YOUR DEVICE.
+            </p>
+          </div>
+
+          <!-- Error Screen Overlay -->
+          <div id="errorScreen">
+            <div style="font-size: 3rem;">🚫</div>
+            <div id="errorMsg">Camera access denied.</div>
+            <button class="btn-court btn-reset" id="retryBtn" style="margin-top: 10px;">TRY AGAIN</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: 3D JUDGE PANEL -->
+      <div class="court-panel" id="judgePanel">
+        <div class="panel-header">
+          <div class="panel-title">👨‍⚖️ PRESIDING JUDGE</div>
+          <span style="font-family: var(--font-legal); font-size: 0.75rem; color: var(--gold-antique);">3D INTERACTIVE BENCH</span>
+        </div>
+
+        <div id="canvas3DContainer"></div>
+
+        <div class="judge-status-bar">
+          <span>COURT STATUS:</span>
+          <span class="judge-verdict-badge" id="judgeStatusBadge">CASE OPENED 👀</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- STATS GRID SECTION -->
+    <div class="stats-grid">
+      <!-- Main Counter Card -->
+      <div class="stat-card-main">
+        <div style="font-family: var(--font-legal); font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase;">
+          EVIDENCE FOUND (TOTAL YAWNS)
+        </div>
+        <div class="stat-counter-val" id="counterNum">0</div>
+        <div class="status-badge" id="statusBadge">CASE OPENED 👀</div>
+      </div>
+
+      <!-- Streak Card -->
+      <div class="stat-card-sub">
+        <div class="stat-sub-label">🔥 YAWN STREAK</div>
+        <div class="stat-sub-val" id="streakNum">0</div>
+      </div>
+
+      <!-- Score Card -->
+      <div class="stat-card-sub">
+        <div class="stat-sub-label">⚡ SLEEPINESS SCORE</div>
+        <div class="stat-sub-val" id="scoreNum">0<span style="font-size:1rem; color:var(--text-muted)">/100</span></div>
+      </div>
+    </div>
+
+    <!-- FAKE SLEEPINESS METER -->
+    <div class="meter-panel">
+      <div class="meter-header">
+        <span>😴 FAKE SLEEPINESS METER</span>
+        <span id="meterPctText" style="color: var(--gold-antique); font-weight: 700;">0%</span>
+      </div>
+      <div class="meter-bar-outer">
+        <div id="meterBarInner"></div>
+      </div>
+    </div>
+
+    <!-- DRAMATIC FINAL VERDICT BANNER (AFTER 10+ YAWNS) -->
+    <div id="verdictBanner">
+      <div class="ink-stamp stamp-guilty">🔨 GUILTY</div>
+      <h2 style="font-family: var(--font-court); font-size: 1.8rem; margin-top: 10px; color: var(--paper-cream);">
+        FINAL VERDICT: GUILTY OF BEING SLEEPY 💀
+      </h2>
+      <div style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--gold-antique); margin-top: 6px;">
+        «SENTENCE: GO TO BED IMMEDIATELY 🛏️»
+      </div>
+    </div>
+
+    <!-- DYNAMIC EVIDENCE CARDS LOG -->
+    <div class="evidence-section">
+      <div style="font-family: var(--font-court); font-size: 1.1rem; color: var(--gold-antique);">
+        📁 COURT EVIDENCE LOG
+      </div>
+      <div class="evidence-grid" id="evidenceGrid">
+        <div class="evidence-card">
+          <div class="evidence-card-num">📁 EVIDENCE #00</div>
+          <div class="evidence-card-title">👀 Waiting for Evidence</div>
+          <div class="evidence-card-desc">"No yawns recorded yet. The defense remains unsuspected..."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REACTION TICKER BOX -->
+    <div id="reactionTicker">
+      <span style="font-size: 1.2rem;">⚖️</span>
+      <span id="tickerText">Court is in session. Waiting for evidence... 👀</span>
+    </div>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <div class="achievements-section">
+      <div style="font-family: var(--font-court); font-size: 1.1rem; color: var(--gold-antique);">
+        🏆 RIDICULOUS ACHIEVEMENTS
+      </div>
+      <div class="achievements-grid" id="achievementsGrid"></div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="controls-row">
+      <button class="btn-court btn-reset" id="resetBtn">💀 RESET YAWNS</button>
+      <button class="btn-court btn-report" id="reportBtn">📊 GENERATE CASE REPORT</button>
+    </div>
+
+    <footer>
+      THE YAWN COURT · ABSURD LEGAL DIVISION · 100% LOCAL BROWSER RUN · NO BACKEND
+    </footer>
+  </div>
+
+  <!-- POLICE / CASE REPORT MODAL -->
+  <div id="modalBackdrop">
+    <div class="modal-content">
+      <div class="ink-stamp stamp-gold" style="display: block; width: max-content; margin: 0 auto 10px;">
+        CONFIDENTIAL
+      </div>
+      <div class="modal-title">📜 CASE FILE REPORT</div>
+      <table class="report-table">
+        <tbody id="reportRows"></tbody>
+      </table>
+      <div class="report-verdict-box" id="reportVerdictBox"></div>
+      <button class="btn-court btn-report" id="modalClose" style="width: 100%; margin-top: 18px;">
+        DISMISS CASE REPORT 💀
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+
 </body>
 </html>
