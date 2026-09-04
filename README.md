@@ -25,10 +25,9 @@
 
 ---
 ## screenshot(Add atleast 2 file)
-<img width="960" height="564" alt="Cover page" src="https://github.com/user-attachments/assets/2cc85956-4e5c-453f-941d-255993b6db83" />
-<img width="960" height="564" alt="Deploying Phase" src="https://github.com/user-attachments/assets/02e300c6-8bb8-4275-8fbf-6f3e2fbc6f54" />
-
-
+<img width="960" height="564" alt="Cover page" src="https://github.com/user-attachments/assets/2cc85956-4e5c-453f-941d-255993b6db83" />-This screenshot shows the cover page.
+<img width="960" height="564" alt="coding Phase" src="https://github.com/user-attachments/assets/f8facf87-f1ae-48d0-af01-1ff293680931" />=Here it shows the coding phase going through.
+<img width="960" height="564" alt="Deploying Phase" src="https://github.com/user-attachments/assets/02e300c6-8bb8-4275-8fbf-6f3e2fbc6f54" />-.The final stage that is deploying phase.
 
 ## 🛑 The Problem (that doesn't exist)
 People yawn throughout the day—during lectures, endless meetings, or late-night coding sessions—without being held accountable or officially sentenced for their sleepiness. Currently, there is **zero legal oversight** for unauthorized yawning.
