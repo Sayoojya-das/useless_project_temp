@@ -1,40 +1,26 @@
-# 🥱 Ctrl+Yawn 💀 — The Yawn Court
+<img width="1280" height="640" alt="git (1)" src="https://github.com/user-attachments/assets/8920b256-2ba8-4988-b824-5351134eb4bd" />
 
-> **“Every yawn is evidence. Every user is on trial. The final verdict: GUILTY OF BEING SLEEPY. 💀”**
 
-[![TinkerHub](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)](https://www.tinkerhub.org/)
-[![Useless Projects](https://img.shields.io/badge/UselessProjects--3.0-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)](https://tinkerhub.org/events/1M8ORET9A1/useless-projects-3.0)
-[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
 
----
+# 🥱 Ctrl+Yawn 💀 — The Useless Yawn Detector
 
-## 🎯 Basic Details
 
-### Team Name: Ecoconnect⚖️
+## Yawn Court is a fun and useless web-based project that uses the camera and facial landmark detection to detect when a person yawns
+### Team Name: ECOCONNECT
+
 
 ### Team Members
-- **Team Lead:** Sayoojya Das Ak — LBS INSTITUTE OF TECHNOLOGY FOR WOMEN
-- **Member 2:** Ashika k-LBS INSTITUTE OF TECHNOLOGY FOR WOMEN
-- 
+- Team Lead: SAYOOJYA DAS AK - LBS INSTITUTE OF TECHNOLOGY FOR WOMEN
+- Member 2: ASHIKA K- LBS INSTITUTE OF TECHNOLOGY FOR WOMEN
 
----
 
-## 🏛️ Project Description
+### Project Description
+Yawn Court is a fun and useless web-based project that uses the camera and facial landmark detection to detect when a person yawns. When a yawn is detected, the system treats it like a courtroom case and humorously declares the person “Guilty of Yawning.” It keeps track of detected yawns and turns a simple facial movement into a funny courtroom experience. 😴⚖️
 
-**Ctrl+Yawn — The Yawn Court** is an absurd, courtroom-themed computer vision web application that turns your webcam into an AI-powered legal evidence scanner. Using **MediaPipe FaceLandmarker blendshapes**, **Three.js 3D animations**, and **Web Audio / Speech synthesis**, the app detects real-time yawns, captures snapshot photo evidence on the spot, triggers dramatic 3D gavel strikes, and convicts defendants on the global **High Court Leaderboard**.
-
----
-## screenshot(Add atleast 2 file)
-<img width="960" height="564" alt="Cover page" src="https://github.com/user-attachments/assets/2cc85956-4e5c-453f-941d-255993b6db83" />-This screenshot shows the cover page.
-<img width="960" height="564" alt="coding Phase" src="https://github.com/user-attachments/assets/f8facf87-f1ae-48d0-af01-1ff293680931" />=Here it shows the coding phase going through.
-<img width="960" height="564" alt="Deploying Phase" src="https://github.com/user-attachments/assets/02e300c6-8bb8-4275-8fbf-6f3e2fbc6f54" />-.The final stage that is deploying phase.
-
-## 🛑 The Problem (that doesn't exist)
+### The Problem (that doesn't exist)
 People yawn throughout the day—during lectures, endless meetings, or late-night coding sessions—without being held accountable or officially sentenced for their sleepiness. Currently, there is **zero legal oversight** for unauthorized yawning.
 
----
-
-## ⚖️ The Solution (that nobody asked for)
+### The Solution (that nobody asked for)
 We built **The Yawn Court**!
 1. **AI Face Blendshape Yawn Detection**: Tracks facial landmarks and uses MediaPipe's `jawOpen` blendshape to analyze mouth openness in real time.
 2. **250ms Time-Based Confirmation Gate**: Requires the mouth to remain widely open for 250ms continuously, eliminating false alarms from talking or smiling.
@@ -46,11 +32,8 @@ We built **The Yawn Court**!
 6. **High Court Evidence Locker & Leaderboard**: Stores defendant scores locally and ranks you against other sleepy offenders on the High Court Leaderboard.
 7. **Final Verdict**: Reaching 10+ yawns triggers a dramatic verdict: **🔨 GUILTY OF BEING SLEEPY. Sentence: GO TO BED IMMEDIATELY 🛏️**.
 
----
-
-## 🛠️ Key Technical Modifications & Architecture
-
-### 1. Robust Blendshape Detection Engine
+## Technical Details
+###### 1. Robust Blendshape Detection Engine
 - **MediaPipe Tasks Vision**: Uses `@mediapipe/tasks-vision@0.10.14` FaceLandmarker with `outputFaceBlendshapes: true`.
 - **jawOpen Metric**: Operates on a scale of `0.0` (closed) to `1.0` (fully open), making detection face-size, camera distance, and angle independent.
 - **4-Tier Loading Fallback**: Supports global scope script loading, namespace objects, dynamic script injection, and ES module import, with CPU fallback if WebGL GPU delegate fails.
@@ -72,55 +55,53 @@ We built **The Yawn Court**!
 
 ---
 
-## 💻 Tech Stack
 
-| Component | Technology |
-| :--- | :--- |
-| **Frontend UI** | HTML5, Vanilla CSS3 (Absurd Courtroom Theme with Mahogany Wood, Gold Accents & Cream Paper Textures), JavaScript ES6+ |
-| **Computer Vision** | `@mediapipe/tasks-vision` (FaceLandmarker & `jawOpen` Face Blendshapes) |
-| **3D Graphics Engine** | Three.js (3D Judge, Gavel, 3D Witness, 3D Scales of Justice & 3D Intro Human) |
-| **Audio Synthesis** | Web Audio API (Procedural Gavel Impact & Pitch-Drop Synths) |
-| **Voice Engine** | Web Speech API (`speechSynthesis` deep voice judge quotes) |
-| **Storage & Persistence** | `localStorage` for High Court Leaderboard and unlocked achievements |
+
+### Implementation
+For Software:
+# Installation
+npm install 
+
+# Run
+npm run dev
+
+### Project Documentation
+For Software:
+
+# Screenshots (Add at least 3)
+<img width="960" height="564" alt="coding Phase" src="https://github.com/user-attachments/assets/b5b17440-22cf-4fac-9214-18972e91ea9a" />
+
+This screenshot shows the coding space..
+<img width="960" height="564" alt="Deploying Phase" src="https://github.com/user-attachments/assets/84149484-54fe-4d71-a6de-930d98944c4c" />
+
+
+At the deploying stage..
+
+<img width="960" height="564" alt="Cover page" src="https://github.com/user-attachments/assets/9783dfa6-3b11-4000-aa75-21e1e45eeb3b" />
+
+The final overview of the webapp
+
+# Diagrams
+![Workflow](Add your workflow/architecture diagram here)
+*Add caption explaining your workflow*
+
+
+
+### Project Demo
+# Video
+[Add your demo video link here]
+*Explain what the video demonstrates*
+
+# Additional Demos
+https://useless-project-temp-bsy0.onrender.com
+
+## Team Contributions
+- SAYOOJYA DAS AK: IDEA PITCHING,IMPLEMENTATION
+- ASHIKA K: IDEA PITCHING,IMPLEMENTATION
+
 
 ---
+Made with ❤️ at TinkerHub Useless Projects 
 
-## 📁 File Structure
-
-```
-useless_project_temp/
-├── index.html        # Main HTML structure with 5-tab navigation & modals
-├── style.css         # Absurd Courtroom theme styles, animations, polaroid frames
-├── script.js        # Complete JS engine (MediaPipe, FSM, Three.js 3D, Web Audio/Speech)
-└── README.md         # Project documentation & technical guide
-```
-
----
-
-## 🚀 How to Run
-
-1. Clone or download this repository.
-2. Open [`index.html`](file:///c:/Users/sayoo/Desktop/useless_project_temp/index.html) in any modern web browser (Google Chrome, Microsoft Edge, Safari, Brave).
-3. Allow camera permissions when prompted.
-4. Click **⚖️ ENTER THE COURTROOM**.
-5. Yawn in front of the webcam to experience live 3D gavel slams, automatic photo evidence capture, and court sentencing!
-
----
-
-## ❓ Frequently Asked Questions
-
-**Q: What problem does this solve?**
-> *“It solves the problem of not knowing how many times you have yawned.” 😭*
-
-**Q: Is my camera data uploaded anywhere?**
-> *“No! 100% of face tracking, landmark detection, and photo snapshots run locally inside your browser. No video or images are sent to any server.” 🔒*
-
-**Q: What is the real-world application?**
-> *“Currently, none.” 💀*
-
----
-
-Made with ❤️ at **TinkerHub Useless Projects** 
-
-![TinkerHub](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
-![Useless Projects](https://img.shields.io/badge/UselessProjects--3.0-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)
+![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
+![Static Badge](https://img.shields.io/badge/UselessProjects--26-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)
