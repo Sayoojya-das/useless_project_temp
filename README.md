@@ -93,7 +93,7 @@ The final overview of the webapp
 *Explain what the video demonstrates*
 
 # Additional Demos
-https://useless-project-temp-bsy0.onrender.com
+https://sayoojya-das.github.io/useless_project_temp/
 
 ## Team Contributions
 - SAYOOJYA DAS AK: IDEA PITCHING,IMPLEMENTATION
