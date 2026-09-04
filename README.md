@@ -2,7 +2,7 @@
 
 
 
-# 🥱 Ctrl+Yawn 💀 — The Useless Yawn Detector
+# 🥱 Ctrl+Yawn 💀 — The Yawn Court
 
 
 ## Yawn Court is a fun and useless web-based project that uses the camera and facial landmark detection to detect when a person yawns
