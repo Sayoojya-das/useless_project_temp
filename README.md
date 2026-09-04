@@ -24,6 +24,11 @@
 **Ctrl+Yawn — The Yawn Court** is an absurd, courtroom-themed computer vision web application that turns your webcam into an AI-powered legal evidence scanner. Using **MediaPipe FaceLandmarker blendshapes**, **Three.js 3D animations**, and **Web Audio / Speech synthesis**, the app detects real-time yawns, captures snapshot photo evidence on the spot, triggers dramatic 3D gavel strikes, and convicts defendants on the global **High Court Leaderboard**.
 
 ---
+## screenshot(Add atleast 2 file)
+<img width="960" height="564" alt="Cover page" src="https://github.com/user-attachments/assets/2cc85956-4e5c-453f-941d-255993b6db83" />
+<img width="960" height="564" alt="Deploying Phase" src="https://github.com/user-attachments/assets/02e300c6-8bb8-4275-8fbf-6f3e2fbc6f54" />
+
+
 
 ## 🛑 The Problem (that doesn't exist)
 People yawn throughout the day—during lectures, endless meetings, or late-night coding sessions—without being held accountable or officially sentenced for their sleepiness. Currently, there is **zero legal oversight** for unauthorized yawning.
